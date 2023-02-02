@@ -5,7 +5,7 @@ import os
 from systemrdl import RDLCompiler
 class transExporter():
 
-    def __init__(self, compiler: RDLCompiler):
+    def __init__(self,):
         """
         Parameters
         ----------

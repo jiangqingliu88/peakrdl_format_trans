@@ -22,7 +22,7 @@ class GensystemRDL:
         Constructor
         '''
         self._rgmItemList = []
-        self.systemRDLFileName = ''
+        self.systemRDLFileName = 'test.rdl'
         self.regblock_name = 'test'
         self.regblock_description = 'test V2.0'
         self._properties = {'register':  '', 'address':  '', 'fields': []}
@@ -201,11 +201,11 @@ if __name__ == '__main__':
         print('ERROR')
         exit()
     print(args.xlsx)
-    if(args.xlsx):
-        format_trans.XLSX2CSV(args.xlsx)
+
+    format_trans.XLSX2CSV(args.xlsx)
     print('%s \n transfer success \n%s' % (40*'*', 40*'*'))
     gen = GensystemRDL()
     gen.readRgmFile(format_trans.csv_name)
-    gen.gensystemRDLFile()
+    gen.gensystemRDLFile(gen.systemRDLFileName)
     print('%s \ntransfer success \n%s' % (40*'*', 40*'*'))
 
