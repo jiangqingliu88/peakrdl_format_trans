@@ -3,7 +3,7 @@ import re
 import csv
 import os
 import argparse
-from format_translator import format_translator
+from .format_translator import format_translator
 
 class GensystemRDL:
     '''
@@ -22,7 +22,7 @@ class GensystemRDL:
         Constructor
         '''
         self._rgmItemList = []
-        self._systemRDLFileName = 'test.rdl'
+        self.systemRDLFileName = ''
         self.regblock_name = 'test'
         self.regblock_description = 'test V2.0'
         self._properties = {'register':  '', 'address':  '', 'fields': []}
@@ -53,8 +53,8 @@ class GensystemRDL:
 
 
 
-    def gensystemRDLFile(self):
-        with open(self._systemRDLFileName, 'w') as systemRDLFile:
+    def gensystemRDLFile(self,systemRDLFileName):
+        with open(self.systemRDLFileName, 'w') as systemRDLFile:
             def _writeaddrmap():
                 self.rdl_file = self.rdl_file + ('addrmap %s \n' % self.regblock_name)
                 self.rdl_file = self.rdl_file + ('{\n')
