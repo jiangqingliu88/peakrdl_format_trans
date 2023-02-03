@@ -14,25 +14,25 @@ addrmap test
            sw=r;
            onread=rclr;
            desc="Config port3 roles";
-       }port3_role[19:16]=4'h0;
+       }port3_role[19:16]=4'h1;
        field{
            sw=r;
            onread=rset;
            desc="Config port2 roles";
-       }port2_role[15:12]=4'h0;
+       }port2_role[15:12]=4'h2;
        field{
            sw=w;
            desc="Config port1 roles";
-       }port1_role[11:8]=4'h0;
+       }port1_role[11:8]=4'h3;
        field{
            sw=w;
            onwrite=wclr;
            desc="Config port0 roles";
-       }port0_role[7:4]=4'h0;
+       }port0_role[7:4]=4'h4;
        field{
            sw=w1;
            desc="Config Switch roles";
-       }Switch_role[3:0]=4'h1;
+       }Switch_role[3:0]=4'h5;
    };
    reg status_reg {
        name="status_reg";
@@ -70,10 +70,6 @@ addrmap test
            onread=rset;
            desc="-";
        }pdelay_update_error[1:1]=1'h0;
-       field{
-           sw=rw;
-           desc="-";
-       }globaltime_update_error[0:0]=1'h0;
    };
 cfg_reg cfg_reg @ 0x0000;
 status_reg status_reg @ 0x0004;

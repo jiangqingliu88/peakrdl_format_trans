@@ -27,3 +27,4 @@ ip-xact importer args:
 exporter args:
   -o OUTPUT            Output path(**********must give)
 #my package have upload pypi
+windows C:\Users\liujiangqing\AppData\Local\Programs\Python\Python310\Lib\site-packages

@@ -6,7 +6,8 @@ import csv
 from openpyxl import load_workbook
 
 class format_translator:
-    csv_name='test.csv'
+    csv_name='test1.csv'
+ 
     def XLSX2CSV(self,data_filenamepath):
         """
         转换 xlsx -> csv
@@ -33,9 +34,9 @@ class format_translator:
             sheet_val.append(row_val)
         print("excle表格转化csv", sheet_val[0])
         dt = pd.DataFrame(sheet_val[1:len(sheet_val)-1], columns=sheet_val[0])
-        save_dir = './'
-        if not os.path.exists(save_dir):
-            os.makedirs(save_dir)
+        save_dir =''
+        #if not os.path.exists(save_dir):
+        #    os.makedirs(save_dir)
         CSVfilepath = os.path.join(save_dir, self.csv_name)
         print('aaa'+CSVfilepath)
         dt.to_csv(CSVfilepath, index=0)

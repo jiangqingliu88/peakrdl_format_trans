@@ -24,17 +24,18 @@ class transImporter():
             Optional remapState string that is used to select memoryRemap regions
             that are tagged under a specific remap state.
         """
-        format_trans=format_translator()
-        if not os.path.exists(xlsx_name):
-            print('%s \nEXCSL FILE PATH NOT EXISTS \n%s\n' % (40*'*', 40*'*'))
-            print('ERROR')
-            exit()
-       #if not os.path.exists(csv_name):
-       #    print('%s \nEXCSL FILE PATH NOT EXISTS \n%s\n' % (40*'*', 40*'*'))
-       #    print('ERROR')
-       #    exit()
-        print(xlsx_name)
-        format_trans.XLSX2CSV(xlsx_name)
+      #  format_trans=format_translator()
+      #  if not os.path.exists(xlsx_name):
+      #      print('%s \nEXCSL FILE PATH NOT EXISTS \n%s\n' % (40*'*', 40*'*'))
+      #      print('ERROR')
+      #      exit()
+      # #if not os.path.exists(csv_name):
+      # #    print('%s \nEXCSL FILE PATH NOT EXISTS \n%s\n' % (40*'*', 40*'*'))
+      # #    print('ERROR')
+      # #    exit()
+      #  print(xlsx_name)
+      #  format_trans.XLSX2CSV(xlsx_name)
+        pass
 
 
     

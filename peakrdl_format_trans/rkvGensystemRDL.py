@@ -22,7 +22,7 @@ class GensystemRDL:
         Constructor
         '''
         self._rgmItemList = []
-        self.systemRDLFileName = 'test.rdl'
+        self.systemRDLFileName = ''
         self.regblock_name = 'test'
         self.regblock_description = 'test V2.0'
         self._properties = {'register':  '', 'address':  '', 'fields': []}
@@ -49,12 +49,13 @@ class GensystemRDL:
 
                 self._rgmItemList[-1]['fields'].append(fieldInfos)
                 fieldInfos = {}
+      
 
 
 
 
-    def gensystemRDLFile(self,systemRDLFileName):
-        with open(self.systemRDLFileName, 'w') as systemRDLFile:
+    def gensystemRDLFile(self,filename1):
+        with open(filename1, 'w') as systemRDLFile:
             def _writeaddrmap():
                 self.rdl_file = self.rdl_file + ('addrmap %s \n' % self.regblock_name)
                 self.rdl_file = self.rdl_file + ('{\n')
@@ -167,6 +168,7 @@ class GensystemRDL:
                         fd['field'], fd['bits'], fd['reset_value']))
                 systemRDLFile.write('   };\n')
 
+
             def _writeRgmend():
 
                 systemRDLFile.write('};\n')
@@ -205,7 +207,7 @@ if __name__ == '__main__':
     format_trans.XLSX2CSV(args.xlsx)
     print('%s \n transfer success \n%s' % (40*'*', 40*'*'))
     gen = GensystemRDL()
-    gen.readRgmFile(format_trans.csv_name)
+    gen.readRgmFile('save_csv'+format_trans.csv_name)
     gen.gensystemRDLFile(gen.systemRDLFileName)
     print('%s \ntransfer success \n%s' % (40*'*', 40*'*'))
 

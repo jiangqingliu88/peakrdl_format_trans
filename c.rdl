@@ -9,30 +9,30 @@ addrmap test
        field{
            sw=r;
            desc="Reserved";
-       }reserved[31:20]=4'h0;
+       }reserved[31:20]=4’h0;
        field{
            sw=r;
            onread=rclr;
            desc="Config port3 roles";
-       }port3_role[19:16]=4'h0;
+       }port3_role[19:16]=4’h0;
        field{
            sw=r;
            onread=rset;
            desc="Config port2 roles";
-       }port2_role[15:12]=4'h0;
+       }port2_role[15:12]=4’h0;
        field{
            sw=w;
            desc="Config port1 roles";
-       }port1_role[11:8]=4'h0;
+       }port1_role[11:8]=4’h0;
        field{
            sw=w;
            onwrite=wclr;
            desc="Config port0 roles";
-       }port0_role[7:4]=4'h0;
+       }port0_role[7:4]=4’h0;
        field{
            sw=w1;
            desc="Config Switch roles";
-       }Switch_role[3:0]=4'h1;
+       }Switch_role[3:0]=4’h1;
    };
    reg status_reg {
        name="status_reg";
@@ -40,17 +40,17 @@ addrmap test
            sw=rw;
            onwrite=woclr;
            desc="";
-       }Reserved[31:5]=27'h0;
+       }Reserved[31:5]=27’h0;
        field{
            sw=rw;
            onwrite=woset;
            desc="0x0:domian 0 0x4:donmian 1";
-       }Sync_ctrl[4:1]=4'h0;
+       }Sync_ctrl[4:1]=4’h0;
        field{
            sw=rw;
            onwrite=wzc;
            desc="Status";
-       }Sync_state[0:0]=1'h0;
+       }Sync_state[0]=1’h0;
    };
    reg error_reg {
        name="error_reg";
@@ -58,22 +58,18 @@ addrmap test
            sw=rw;
            onread=rclr;
            desc="Reserved";
-       }Reserved[31:3]=29'h0;
+       }Reserved[31:3]=29’h0;
        field{
            sw=rw;
            onread=rclr;
            onwrite=woset;
            desc="-";
-       }rate_update_error[2:2]=1'h0;
+       }rate_update_error[2]=1’h0;
        field{
            sw=rw;
            onread=rset;
            desc="-";
-       }pdelay_update_error[1:1]=1'h0;
-       field{
-           sw=rw;
-           desc="-";
-       }globaltime_update_error[0:0]=1'h0;
+       }pdelay_update_error[1]=1’h0;
    };
 cfg_reg cfg_reg @ 0x0000;
 status_reg status_reg @ 0x0004;
